@@ -152,8 +152,8 @@
         document.querySelector("#two").innerHTML = arr[i++]
       }
 
-      window.addEventListener("orientationchange", throttling(()=>changeText(),500))
-      window.addEventListener("deviceorientation", throttling(() => changeText(), 500));
+      // window.addEventListener("orientationchange", throttling(()=>changeText(),500))
+      window.addEventListener("deviceorientation", throttling(() => changeText(), 500),true);
 
     </script>
 
