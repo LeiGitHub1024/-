@@ -62,6 +62,7 @@
       <!-- </div> -->
       
     </div>
+
     <script>
       let arr =[
         ...['一帆风顺', '一丝不苟', '一箭双雕', '一见钟情', '一路顺风', '一毛不拔', '一目了然', '一曲高歌', '一举两得', 
@@ -151,7 +152,9 @@
         document.querySelector("#two").innerHTML = arr[i++]
       }
 
-      window.addEventListener("orientationchange",throttling(()=>changeText(),500))
+      window.addEventListener("orientationchange", throttling(()=>changeText(),500))
+      window.addEventListener("deviceorientation", throttling(() => changeText(), 500));
+
     </script>
 
 </body>
