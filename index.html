@@ -147,13 +147,21 @@
           }
         }
       } 
+      function handledeviceorientation(obj){
+        if(obj.gamma>-45&&obj.gamma<-30){
+          changeText()
+        }
+        if(obj.gamma>45&&gamma<50){
+          changeText()
+        }
+      }
       function changeText (){
 
         document.querySelector("#two").innerHTML = arr[i++]
       }
 
       // window.addEventListener("orientationchange", throttling(()=>changeText(),500))
-      window.addEventListener("deviceorientation", throttling(() => changeText(), 500),true);
+      window.addEventListener("deviceorientation", handledeviceorientation(),true);
 
     </script>
 
