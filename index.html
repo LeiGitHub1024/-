@@ -65,8 +65,7 @@
 
     <script>
       //申请权限！
-      DeviceOrientationEvent?.requestPermission()
-      DeviceMotionEvent?.requestPermission()
+     
       
       
       let arr =[
@@ -134,10 +133,24 @@
       }
       shuffleArray(arr)
       let i=0;
-      function start(){
+      function start(){ //点击开始按钮
         let one =  document.querySelector('#one')
         one.style.display = 'none'
         two.style.display = 'block'
+        if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        DeviceOrientationEvent.requestPermission()
+          .then(permissionState => {
+            if (permissionState === 'granted') {
+              alert('已获得 DeviceOrientation 权限');
+              } else {
+                alert('权限被拒绝');
+              }
+            })
+            .catch(console.error);
+        } else {
+          alert('不支持请求权限');
+        }
+      
       }
 
       function double(){
