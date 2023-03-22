@@ -64,6 +64,17 @@
     </div>
 
     <script>
+      if (window.DeviceOrientationEvent) {
+        // Request permission to access the sensors
+        navigator.permissions.query({ name: 'accelerometer' })
+          .then(permissionStatus => {
+            if (permissionStatus.state === 'granted') {
+                // Access to the sensors is granted
+            } else {
+                // Access to the sensors is not granted
+            }
+          });
+      }
       let arr =[
         ...['一帆风顺', '一丝不苟', '一箭双雕', '一见钟情', '一路顺风', '一毛不拔', '一目了然', '一曲高歌', '一举两得', 
                   '一心一意', '一衣带水', '一语双关', '一针见血', '七上八下', '七嘴八舌', '万无一失', '三思而行', '三言两语', '三长两短', 
