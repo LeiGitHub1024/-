@@ -155,13 +155,12 @@
           changeText()
         }
       }
-      function changeText (){
-
+      function changeText(){
         document.querySelector("#two").innerHTML = arr[i++]
       }
 
       // window.addEventListener("orientationchange", throttling(()=>changeText(),500))
-      window.addEventListener("deviceorientation", handledeviceorientation(),true);
+      window.addEventListener("deviceorientation", handledeviceorientation,true);
 
     </script>
 
