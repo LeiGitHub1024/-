@@ -65,20 +65,9 @@
 
     <script>
       //申请权限！
-      function enable(){
-        if (!('DeviceOrientationEvent' in window))
-          return Promise.reject(new Error('DeviceOrientationEvent not supported'));
-        const {
-          requestPermission = (() => Promise.resolve('granted'))
-        } = DeviceOrientationEvent;
-        return requestPermission();
-      }
-      enable().then(permissionStatus => {
-        // Permission granted, do something with the orientation data
-      })
-      .catch(error => {
-        // Handle error if DeviceOrientationEvent is not supported or permission is denied
-      });
+      DeviceOrientationEvent?.requestPermission()
+      DeviceMotionEvent?.requestPermission()
+      
       
       let arr =[
         ...['一帆风顺', '一丝不苟', '一箭双雕', '一见钟情', '一路顺风', '一毛不拔', '一目了然', '一曲高歌', '一举两得', 
